@@ -12,7 +12,7 @@ set(LIB_PATCH_VERSION "0")
 set(LIB_VERSION_STRING "${LIB_MAJOR_VERSION}.${LIB_MINOR_VERSION}.${LIB_PATCH_VERSION}")
 
 if(CMAKE_VERSION VERSION_LESS 3.0)
-    project(uint256t C)
+    project(uint256t CXX)
     enable_language(CXX)
 else()
     cmake_policy(SET CMP0048 NEW)
@@ -44,7 +44,7 @@ if(NOT MSVC)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -O3")
 endif()
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
 set(UINT256T_SRC
     uint128_t.cpp
