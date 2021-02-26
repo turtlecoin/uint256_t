@@ -24,20 +24,18 @@
 #ifndef _ENDIANNESS_H_
 #define _ENDIANNESS_H_
 
-#if (defined(__BYTE_ORDER__) && __BYTE_ORDER__ == __BIG_ENDIAN) ||             \
-    (defined(__BYTE_ORDER__) && __BYTE_ORDER__ == __ORDER_BIG_ENDIAN__) ||     \
-    defined(__BIG_ENDIAN__) || defined(__ARMEB__) || defined(__THUMBEB__) ||   \
-    defined(__AARCH64EB__) || defined(_MIBSEB) || defined(__MIBSEB) ||         \
-    defined(__MIBSEB__)
+#if (defined(__BYTE_ORDER__) && __BYTE_ORDER__ == __BIG_ENDIAN)                                                      \
+    || (defined(__BYTE_ORDER__) && __BYTE_ORDER__ == __ORDER_BIG_ENDIAN__) || defined(__BIG_ENDIAN__)                \
+    || defined(__ARMEB__) || defined(__THUMBEB__) || defined(__AARCH64EB__) || defined(_MIBSEB) || defined(__MIBSEB) \
+    || defined(__MIBSEB__)
 #ifndef __BIG_ENDIAN__
 #define __BIG_ENDIAN__
 #endif // __BIG_ENDIAN__
 
-#elif (defined(__BYTE_ORDER__) && __BYTE_ORDER__ == __LITTLE_ENDIAN) ||        \
-    (defined(__BYTE_ORDER__) && __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__) ||  \
-    defined(__LITTLE_ENDIAN__) || defined(__ARMEL__) ||                        \
-    defined(__THUMBEL__) || defined(__AARCH64EL__) || defined(_MIPSEL) ||      \
-    defined(__MIPSEL) || defined(__MIPSEL__) || defined(_MSC_VER)
+#elif (defined(__BYTE_ORDER__) && __BYTE_ORDER__ == __LITTLE_ENDIAN)                                                 \
+    || (defined(__BYTE_ORDER__) && __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__) || defined(__LITTLE_ENDIAN__)          \
+    || defined(__ARMEL__) || defined(__THUMBEL__) || defined(__AARCH64EL__) || defined(_MIPSEL) || defined(__MIPSEL) \
+    || defined(__MIPSEL__) || defined(_MSC_VER)
 #ifndef __LITTLE_ENDIAN__
 #define __LITTLE_ENDIAN__
 #endif // __LITTLE_ENDIAN
