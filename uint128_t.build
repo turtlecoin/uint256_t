@@ -22,10 +22,9 @@
 // THE SOFTWARE.
 
 #ifndef _UINT256_T_BUILD
-  #define _UINT256_T_BUILD
-  #include "uint256_t_config.include"
-  #define UINT256_T_EXTERN _UINT256_T_EXPORT
+#define _UINT256_T_BUILD
+#include "uint256_t_config.include"
+#define UINT256_T_EXTERN _UINT256_T_EXPORT
 #endif // _UINT256_T_BUILD
 
 #include "uint128_t.include"
-

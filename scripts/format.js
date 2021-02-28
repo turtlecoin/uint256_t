@@ -13,7 +13,7 @@ const exec = promisify(childProcess.exec)
 const directoriesToFormat = ['.']
 
 /* Filetypes to run the formatter on */
-const fileTypes = ['.h', '.cpp', '.c']
+const fileTypes = ['.h', '.cpp', '.c', '.include', '.build']
 
 /* The name of the clang-format binary. In some distros this has the version
    appended. */
