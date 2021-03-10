@@ -31,6 +31,12 @@ to do a general rewrite of this class.
 #ifndef __UINT256_T__
 #define __UINT256_T__
 
+#ifdef _WIN32
+#define EXPORTDLL __declspec(dllexport)
+#else
+#define EXPORTDLL
+#endif
+
 #include <cstdint>
 #include <ostream>
 #include <stdexcept>
@@ -53,11 +59,11 @@ namespace std
     };
 } // namespace std
 
-class uint256_t
+class EXPORTDLL uint256_t
 {
   private:
 #ifdef __BIG_ENDIAN__
-    uint128_t UPPER, LOWER;
+    EXPORTDLL uint128_t UPPER, LOWER;
 #endif
 #ifdef __LITTLE_ENDIAN__
     uint128_t LOWER, UPPER;

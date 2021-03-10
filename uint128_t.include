@@ -34,6 +34,12 @@ to do a general rewrite of this class.
 #ifndef __UINT128_T__
 #define __UINT128_T__
 
+#ifdef _WIN32
+#define EXPORTDLL __declspec(dllexport)
+#else
+#define EXPORTDLL
+#endif
+
 #include "endianness.h"
 
 #include <cstdint>
@@ -60,7 +66,7 @@ namespace std
     };
 } // namespace std
 
-class uint128_t
+class EXPORTDLL uint128_t
 {
   private:
 #ifdef __BIG_ENDIAN__
